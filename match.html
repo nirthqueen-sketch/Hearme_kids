@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لعبة مطابقة الكلمات</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>لعبة مطابقة الكلمات</h1>
+    <p>طابق الكلمة مع الصورة الصحيحة</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>اختر الصورة الصحيحة لكل كلمة</h2>
+
+      <!-- فيديو تمهيدي -->
+      <div id="video-container">
+        <video id="intro-video" width="100" autoplay muted>
+          <source src="omar.mp4" type="video/mp4">
+        </video>
+        <p id="video-text">اهلا انا عمر يلا نلعب سوا اللعبة سهلة وممتعة متقلقش</p>
+      </div>
+
+      <div id="game-area">
+        <p id="challenge-word">الصورة هتظهر هنا قريب</p>
+      </div>
+
+      <div id="result"></div>
+
+      <button type="button" id="startGame">ابدأ اللعبة</button>
+    </section>
+  </main>
+
+  <footer>
+    <a href="game.html">الرجوع الى قائمة الألعاب الرئيسية</a>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="match.js"></script>
+</body>
+</html>

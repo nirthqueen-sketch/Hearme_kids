@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لعبة نطق الكلمة</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="motivation.js"></script>
+
+</head>
+<body>
+<!-- Omar Character -->
+<div id="omar-box">
+    <span id="omar-message">اسمع الكلمة وقولها زي ما أنا بقولها 😊</span>
+</div>
+
+
+  <header>
+    <h1>لعبة نطق الكلمة</h1>
+    <p>استمع الكلمةوحاول نطقها بنفسك</p>
+    </header>
+  <main>
+    <section>
+      <button type="button" id="play-word">🔊 استمع للكلمة</button>
+      <button type="button" id="start-speaking">🎤 ابدأ التحدث</button>
+      <p id="spoken-word">هنا هيظهر كلامك بعد التسجيل</p>
+      <button type="button" id="startGame">✅ تحقق من النطق</button>
+      <script>
+    attachToButton('startGame'); // يربط الصوت بالزر
+</script>
+    </section>
+  </main>
+  <footer>
+    <a href="game.html">الرجوع الى قائمة الالعاب</a>
+    </footer>
+    <script src="script.js"></script>
+    <script src="speak.js"></script>
+    <script src="sounds.js"></script>
+
+</body>
+</html>

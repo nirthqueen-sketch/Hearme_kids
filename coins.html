@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محفظة الكوينز - HearMe Kids</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-header">HearMe Kids</div>
+        <a href="main.html" class="sidebar-item">🏠 الرئيسية</a>
+        <a href="coins.html" class="sidebar-item">💰 الكوينز</a>
+        
+        <hr class="sidebar-separator">
+        
+        <div class="sidebar-group-title">👤 إدارة الحسابات</div>
+        <a href="account_switcher.html" class="sidebar-item">👨‍👩‍👧‍👦 تبديل الأبناء</a> 
+        <a href="#" id="parent-login-link" class="sidebar-item">🔑 دخول الولي</a> 
+        <a href="settings.html" class="sidebar-item">⚙️ الإعدادات</a> 
+        
+        <hr class="sidebar-separator">
+        
+        <a href="#" id="logout-student-link" class="sidebar-item logout-btn">🚪 تسجيل خروج الطالب</a> 
+    </nav>
+
+    <div class="page-wrapper">
+        <main>
+            <h1>💰 رصيد المكافآت</h1>
+            <p>مرحباً يا بطل/ة <span id="student-name-header" style="color: #274569; font-weight: bold;"></span>!</p>
+
+            <section style="background: linear-gradient(135deg, #FFF9E1 0%, #FFEFBA 100%); border: 3px solid #E3A656;">
+                <h2 style="color: #274569;">رصيدك الحالي هو:</h2>
+                <div style="font-size: 60px; margin: 20px 0;">
+                    ⭐ <span id="total-coins">0</span>
+                </div>
+                <p>كلما تعلمت كلمات أكثر، زادت نجومك!</p>
+            </section>
+
+            <section>
+                <h2>📚 كلمات قمت بجمعها</h2>
+                <p style="font-size: 14px; color: #666;">اضغط على زر "اسمع" لمراجعة نطق الكلمة</p>
+                
+                <div id="words-container" class="grid-list" style="margin-top: 20px;">
+                    <p id="empty-msg" class="hidden">لا يوجد كلمات في حقيبتك بعد، ابدأ اللعب الآن!</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 HearMe Kids - رحلة تعلم ممتعة</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="coins.js"></script>
+    <script src="sounds.js"></script>
+
+</body>
+</html>

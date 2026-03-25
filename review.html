@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مراجعة كلماتي - HearMe Kids</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <header>
+        <h1>📚 مراجعة كلماتي</h1>
+        <p>هنا يمكنك مراجعة الكلمات التي تعلمتها ونطقتها.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>البحث السريع</h2>
+            <p>ابحث عن كلمة معينة أو ابدأ الكتابة للتصفية الفورية.</p>
+            
+            <div class="search-container">
+                <input type="text" id="search-word" placeholder="ابحث عن كلمة...">
+                <button type="button" id="search-btn">بحث</button>
+            </div>
+             
+        </section>
+
+        <section>
+            <h2>قائمة الكلمات المحفوظة</h2>
+            <div id="word-list-container">
+                <ul id="reviewed-words">
+                    <li>(سيتم تحميل الكلمات التي تم نطقها أو تعلمها...)</li>
+                </ul>
+            </div>
+            
+            <button type="button" id="clear-list-btn" class="btn-secondary">مسح قائمة الكلمات</button>
+        </section>
+    </main>
+
+    <footer>
+        <a href="main.html">الرجوع إلى الصفحة الرئيسية</a>
+    </footer>
+    <script src="review.js"></script>
+    <script src="sounds.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تبديل الحسابات - HearMe Kids</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-header">HearMe Kids</div>
+        <a href="main.html" class="sidebar-item">🏠 الرئيسية</a>
+        <a href="coins.html" class="sidebar-item">💰 الكوينز</a>
+        
+        <hr class="sidebar-separator">
+        
+        <div class="sidebar-group-title">👤 إدارة الحسابات</div>
+        <a href="account_switcher.html" class="sidebar-item">👨‍👩‍👧‍👦 تبديل الأبناء</a> 
+        <a href="#" id="parent-login-link" class="sidebar-item">🔑 دخول الولي</a> 
+        <a href="settings.html" class="sidebar-item">⚙️ الإعدادات</a> 
+        
+        <hr class="sidebar-separator">
+        
+        <a href="#" id="logout-student-link" class="sidebar-item logout-btn">🚪 تسجيل خروج الطالب</a> 
+
+    </nav>
+
+    <div class="page-wrapper">
+        <main>
+            <h1>👤 تبديل وإدارة الحسابات</h1>
+            <p>اختر الطالب الذي سيبدأ اللعب أو سجل الدخول كولي أمر.</p>
+
+            <section>
+                <h2>الأبناء المسجلون:</h2>
+                <div id="student-list" class="grid-list">
+                    <p id="loading-msg">جاري تحميل بيانات الأبناء...</p>
+                </div>
+                <button id="add-student-btn" onclick="window.location.href='login.html'" style="margin-top: 20px;">+ إضافة طالب جديد</button>
+            </section>
+
+            <section id="parent-login-area" class="hidden" style="border: 2px solid #0077b6; padding: 20px; border-radius: 15px;">
+                <h2>🔐 الدخول كولي أمر</h2>
+                <p>لإدارة الحسابات أو مسح البيانات، يرجى إدخال كلمة المرور الأبوية.</p>
+                <form id="parent-login-form">
+                    <div class="field" style="max-width: 300px; margin: 20px auto;">
+                        <label for="parent-pass-input">كلمة المرور الأبوية</label>
+                        <input type="password" id="parent-pass-input" required>
+                    </div>
+                    <button type="submit">تسجيل الدخول</button>
+                    <p id="login-error-msg" style="color: red; margin-top: 10px;"></p>
+                </form>
+            </section>
+            
+        </main>
+
+        <footer>
+            <p>© 2025 HearMe Kids. جميع الحقوق محفوظة.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script> 
+    <script src="account_switcher.js"></script>
+    <script src="sounds.js"></script>
+ 
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة الألعاب - HearMe Kids</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+        .game-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: #34495e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .game-card h3 {
+            color: #0077b6;
+            margin-top: 10px;
+        }
+        .game-icon {
+            font-size: 40px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <header>
+        <h1>🎮 اختر لعبة</h1>
+        <p>مرحباً بك في عالم التعلم الممتع! اختر تحديك التالي.</p>
+    </header>
+
+    <main>
+        <div class="game-grid">
+            
+            <a href="spelling.html" class="game-card">
+    <img src="spell.jpg" class="game-image">
+    <h3>لعبة التهجئة</h3>
+    <p>استمع إلى الكلمة واكتبها بشكل صحيح.</p>
+</a>
+
+            
+            <a href="speak.html" class="game-card">
+    <img src="speak.jpg" class="game-image">
+    <h3>لعبة النطق</h3>
+    <p>انطق الكلمة المطلوبة بصوت واضح للتحقق من نطقك.</p>
+</a>
+
+            
+            <a href="match.html" class="game-card">
+    <img src="match.jpg" class="game-image">
+    <h3>لعبة المطابقة</h3>
+    <p>طابق الكلمة المكتوبة بالصورة الصحيحة.</p>
+</a>
+
+
+            </div>
+    </main>
+
+    <footer>
+        <a href="main.html">الرجوع إلى الصفحة الرئيسية</a>
+    </footer>
+  <script src="sounds.js"></script>
+
+</body>
+</html>

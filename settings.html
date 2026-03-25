@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإعدادات - HearMe Kids</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="motivation.js"></script>
+
+
+</head>
+<body>
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-header">HearMe Kids</div>
+        <a href="main.html" class="sidebar-item">🏠 الرئيسية</a>
+        <a href="coins.html" class="sidebar-item">💰 الكوينز</a>
+        
+        <hr class="sidebar-separator">
+        
+        <div class="sidebar-group-title">👤 إدارة الحسابات</div>
+        <a href="account_switcher.html" class="sidebar-item">👨‍👩‍👧‍👦 تبديل الأبناء</a> 
+        <a href="#" id="parent-login-link" class="sidebar-item">🔑 دخول الولي</a> 
+        <a href="settings.html" class="sidebar-item">⚙️ الإعدادات</a> 
+        
+        <hr class="sidebar-separator">
+        
+        <a href="#" id="logout-student-link" class="sidebar-item logout-btn">🚪 تسجيل خروج الطالب</a> 
+
+    </nav>
+
+    <div class="page-wrapper">
+        <main>
+            <h1>⚙️ إعدادات الموقع</h1>
+
+            <section>
+                <h2 style="color: #E3A656;">💰 رصيد الطالب الحالي: <span id="current-coins">0</span> كوينز</h2>
+            </section>
+
+            <section>
+                <h2>🔊 إعدادات الصوت</h2>
+                
+                <div class="field">
+                    <label for="volume-slider">مستوى الصوت:</label>
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1.0">
+                </div>
+
+                <div class="field">
+                    <label for="speech-rate">سرعة النطق:</label>
+                    <select id="speech-rate">
+                        <option value="0.7">بطيء</option>
+                        <option value="1.0" selected>عادي</option>
+                        <option value="1.3">سريع</option>
+                    </select>
+                </div>
+                
+                <div class="field">
+                    <label for="voice-select">صوت القارئ:</label>
+                    <select id="voice-select">
+                        <option>جار التحميل...</option>
+                    </select>
+                </div>
+            </section>
+
+            <section>
+                <h2>🌈 المظهر والتحكم</h2>
+                
+                <div class="field">
+                    <label for="font-size-select">حجم الخط:</label>
+                    <select id="font-size-select">
+                        <option value="small">صغير</option>
+                        <option value="medium" selected>متوسط</option>
+                        <option value="large">كبير</option>
+                    </select>
+                </div>
+                
+                <button id="toggle-fullscreen">🖥️ وضع الشاشة الكاملة</button>
+            </section>
+            
+            <section id="logout-management" style="background-color: #fffbeb; border: 2px solid #E3A656; padding: 20px; border-radius: 15px;">
+                <h2 style="color: #274569;">🔒 إدارة الحسابات والبيانات</h2>
+                
+                <button id="logout-student-btn-sec" class="btn-secondary">🚪 تسجيل خروج الطالب الحالي</button>
+                <p style="font-size: 14px; margin-top: 10px; color: #6c757d;">(يسمح بالرجوع لتبديل الحسابات دون مسح البيانات)</p>
+
+                <hr style="margin: 20px 0;">
+
+                <button id="clear-words-btn" class="btn-secondary" style="background-color: #6c757d;">🗑️ مسح كلمات المراجعة المحفوظة</button>
+                <p style="font-size: 14px; color: #6c757d;">(هذا الإجراء يتطلب كلمة مرور ولي الأمر)</p>
+
+
+                <hr style="margin: 20px 0;">
+
+                <h3 style="color: red;">مسح حساب الولي بالكامل</h3>
+                <p>لتسجيل خروجك ومسح جميع بيانات الولي وكل الأبناء بالكامل، أدخل كلمة المرور الأبوية:</p>
+                <form id="parent-logout-form">
+                    <div class="field" style="max-width: 300px; margin: 15px auto;">
+                        <label for="parent-pass-logout">كلمة المرور الأبوية</label>
+                        <input type="password" id="parent-pass-logout" required>
+                    </div>
+                    <button type="submit" style="background-color: red;">مسح جميع البيانات وتسجيل الخروج الكامل</button>
+                    <p id="logout-error-msg" style="color: red; margin-top: 10px;"></p>
+                </form>
+            </section>
+            
+        </main>
+
+        <footer>
+            <p>© 2025 HearMe Kids. جميع الحقوق محفوظة.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script> 
+    <script src="settings.js"></script>
+    <script src="sounds.js"></script>
+ 
+</body>
+</html>

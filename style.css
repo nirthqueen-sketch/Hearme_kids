@@ -1,0 +1,366 @@
+/* style.css */
+/* ================================================= */
+/* 1. التنسيقات الأساسية والعامة والـ Sticky Footer    */
+/* ================================================= */
+body {
+  background-color:#C0E3EA;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl; 
+  color: #34495e;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  
+  /* خصائص Flexbox لـ Sticky Footer */
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh; 
+}
+h1, h2 {
+  color:#274569;
+  margin-top: 20px;
+}
+p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+button {
+  background-color: #E3A656;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 12px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 10px;
+}
+button:hover {
+  background-color: #274569;
+  transform: scale(1.05);
+}
+main, section {
+  background: #fffbeb;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* خاصية Flex-grow لدفع الـ Footer للأسفل */
+main {
+    flex-grow: 1;
+}
+
+/* تنسيقات حقول الإدخال */
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+label {
+  font-weight: bold;
+}
+input, select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 70%;
+  max-width: 400px;
+  font-size: 16px;
+  text-align: center;
+}
+input:focus, select:focus {
+  outline: none;
+  border-color: #0077b6;
+  box-shadow: 0 0 5px #0077b6;
+}
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.btn-secondary {
+  background-color: #6c757d;
+}
+.btn-secondary:hover {
+  background-color:#5a6268; 
+}
+section {
+  margin-bottom: 25px;
+}
+section h2 {
+  color: #0077b6;
+}
+footer {
+  margin-top: auto; /* ليدفع للأسفل داخل page-wrapper */
+  padding: 15px;
+  background: #0077b6;
+  color: white;
+  border-radius: 0; 
+}
+footer p {
+    font-size: 16px;
+}
+
+
+/* ================================================= */
+/* 2. تنسيق شريط التنقل الجانبي الثابت (Sidebar)      */
+/* ================================================= */
+
+.sidebar {
+    height: 100%; /* ارتفاع كامل الشاشة */
+    width: 250px; /* عرض الشريط */
+    position: fixed; 
+    z-index: 1100; /* أعلى من كل شيء */
+    top: 0;
+    right: 0; /* الشريط يظهر على اليمين */
+    background-color: #274569; 
+    padding-top: 70px; /* زيادة المسافة العلوية لعدم تداخل النص مع زر القائمة */
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; 
+    text-align: right;
+    transition: transform 0.3s ease; /* حركة ناعمة عند الإخفاء والإظهار */
+}
+
+.sidebar-header {
+    color: #E3A656;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.sidebar-group-title {
+    color: #C0E3EA;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 15px 5px;
+    text-align: right;
+}
+
+.sidebar-item {
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: background-color 0.3s;
+    text-align: right;
+}
+
+.sidebar-item:hover {
+    background-color: #0077b6;
+}
+
+.sidebar-separator {
+    border: 0;
+    height: 1px;
+    background-color: #4a688a;
+    margin: 10px 15px;
+}
+
+.logout-btn {
+    background-color: #E3A656;
+    color: #274569;
+    font-weight: bold;
+    margin: 20px 15px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+}
+
+/* تحريك المحتوى بالكامل للجهة اليسرى لإفساح المجال للشريط الجانبي */
+.page-wrapper {
+    margin-right: 280px; /* تم الزيادة عن 250px لخلق فاصل بين المحتوى والشريط */
+    padding: 0;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    transition: margin-right 0.3s ease; /* حركة ناعمة للمحتوى */
+}
+
+/* ================================================= */
+/* 5. تحسينات التجاوب (Mobile & Sidebar Toggle)      */
+/* ================================================= */
+
+/* كلاس لإخفاء الشريط الجانبي (يضاف عبر JS) */
+.sidebar.hidden {
+    transform: translateX(100%); /* إخراج الشريط خارج الشاشة لليمين */
+}
+
+/* كلاس لتوسيع المحتوى عند إخفاء الشريط */
+.page-wrapper.expanded {
+    margin-right: 0;
+}
+
+/* زر القائمة (Hamburger) */
+.menu-toggle-btn {
+    position: fixed;
+    top: 15px;
+    right: 20px; /* يظهر في الزاوية اليمنى */
+    z-index: 1200; /* أعلى من الشريط الجانبي */
+    background-color: #E3A656;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* عرض الكوينز */
+.coins-display {
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    background-color: #fff;
+    border: 2px solid #E3A656;
+    color: #274569;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    z-index: 1100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Media Queries للموبايل --- */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(100%); /* مخفي افتراضياً في الموبايل */
+    }
+    .sidebar.active {
+        transform: translateX(0); /* إظهار عند التفعيل */
+    }
+    .page-wrapper {
+        margin-right: 0; /* المحتوى يأخذ كامل العرض دائماً في الموبايل */
+    }
+    .menu-toggle-btn {
+        right: 10px; /* تعديل المكان قليلاً */
+    }
+}
+
+/* ================================================= */
+/* 3. تنسيق خاص بصفحة تسجيل الدخول (login.html)       */
+/* ================================================= */
+
+.hidden {
+    display: none !important; /* ⭐️ لإخفاء الشاشات بشكل إجباري ⭐️ */
+}
+
+.selection-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.role-btn {
+    background-color: #0077b6; 
+    padding: 15px 30px;
+    font-size: 20px;
+    width: 200px;
+}
+
+.role-btn:hover {
+    background-color: #274569;
+}
+
+
+/* ================================================= */
+/* 4. تنسيق صفحة تبديل الحسابات (account_switcher.html)  */
+/* ================================================= */
+.grid-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.student-card {
+    min-width: 150px;
+    text-align: right;
+}
+.student-card h3 {
+    color: #274569;
+}
+.active-student {
+    border-color: #E3A656 !important;
+    background-color: #fff3e0 !important;
+    transform: scale(1.03);
+}
+.avatar-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #0077b6;
+    object-fit: cover;
+
+}
+#toggleBtn {
+  position: fixed;
+  left: 10px; /* مكان الزر على الشمال */
+  top: 10px;  /* مكان الزر من فوق */
+  font-size: 24px;
+  color: #274569;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 1100; /* يفضل فوق الشريط */
+}
+.logo-container {
+  text-align: center; /* عشان المحتوى جوه يبقى في النص */
+}
+
+.logo-container {
+  width: 250px;               /* حجم صغير جدًا */
+  height: 250px;
+  border-radius: 50%;        /* دائرة كاملة */
+  border: 2px solid orange;  /* بوردر مناسب للصورة الصغيرة */
+  display: block;            /* عشان نقدر نعمل محاذاة نصية */
+  margin: 0 auto;            /* يخلّي الصورة في النص بالظبط */
+}
+.logo-container:hover {
+  transform: scale(1.2);     /* تكبير بسيط عند المرور */
+  transition: transform 0.3s; /* حركة ناعمة */
+}
+#omar-box {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10000;
+    font-family: Arial, sans-serif;
+}
+
+#omar-box img {
+    width: 48px;
+    height: 48px;
+}
+
+#omar-message {
+    font-size: 14px;
+    color: #333;
+    max-width: 180px;
+}
+.game-image {
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
