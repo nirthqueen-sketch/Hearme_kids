@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة تهجئة الكلمات</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="motivation.js"></script>
+
+</head>
+<body>
+    <div class="omar">
+  
+  <p id="omar-message">يلا نلعب 😊</p>
+</div>
+
+
+    <header>
+        <h1>لعبة تهجئة الكلمات</h1>
+        <p>استمع الى الكلمة وحاول تهجئها بشكل صحيح </p>
+    </header>
+    <main>
+        <section>
+            <p id="word-challenge">اضغط على "اسمع الكلمة" لتبدأ</p>
+            <button type="button" id="play-sound">اسمع الكلمة</button>
+            
+            <label for="answer">اكتب الكلمة</label>
+            <input type="text" id="answer" placeholder="اكتب الكلمة هنا"/>
+            
+            <button type="button" id="startGame">تحقق من الاجابة</button>
+            <script>
+    attachToButton('startGame'); // يربط الصوت بالزر
+</script>
+            <p id="feedback">هتظهر النتائج هنا</p>
+        </section>
+    </main>
+    <footer>
+        <a href="game.html">العودة الى قائمة اللعب</a>
+    </footer>
+    <script src="script.js"></script>
+    <script src="spelling.js"></script>
+    <script src="sounds.js"></script>
+
+</body>
+</html>
+
+ 

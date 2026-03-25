@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - HearMe Kids</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <main id="login-container">
+        <h1>👋 أهلاً بك في HearMe Kids</h1>
+
+        <img 
+    src="logo.jpg" 
+    alt="logan image" 
+    class="avatar-image">
+        <p>من فضلك، اختر دورك للمتابعة.</p>
+
+        <section id="role-selection" class="login-screen">
+            <h2>من أنت؟</h2>
+            <div class="selection-buttons">
+                <button id="student-btn" class="role-btn">أنا طالب 👦👧</button>
+                <button id="parent-btn" class="role-btn">أنا ولي أمر 👨‍👩‍👧‍👦</button>
+            </div>
+        </section>
+
+        <section id="student-message" class="login-screen hidden">
+            <h2 style="color: #E3A656;">💡 ملاحظة هامة!</h2>
+            <p style="font-size: 20px; font-weight: bold;">
+                من فضلك، اطلب من أحد الوالدين أو ولي الأمر إعداد حساب لك على HearMe Kids.
+            </p>
+            <p>
+                هذا يضمن لك تجربة تعليمية آمنة ومناسبة لسنك.
+            </p>
+            <button id="back-from-student-btn" class="btn-secondary" style="margin-top: 20px;">
+                ↩️ الرجوع لاختيار الدور
+            </button>
+        </section>
+
+        <section id="parent-form" class="login-screen hidden">
+            <h2>أهلاً بك أيها الوالد/الولي 👋</h2>
+            <p>قبل السماح لطفلك باستكشاف عالم هيرمي كيدز الممتع، **يرجى ملء البيانات التالية لإعداد حساب**.</p>
+            
+            <form id="parent-registration-form">
+                <div class="field">
+                    <label for="parent-name">اسم الولي (للتذكير)</label>
+                    <input type="text" id="parent-name" name="parent-name" placeholder="مثال: أحمد" required>
+                </div>
+                <div class="field">
+                    <label for="parent-email">البريد الإلكتروني (اختياري)</label>
+                    <input type="email" id="parent-email" name="parent-email" placeholder="لإرسال التقارير (اختياري)">
+                </div>
+                <div class="field">
+                    <label for="parent-password">كلمة مرور الأمان (للقفل الأبوي)</label>
+                    <input type="password" id="parent-password" name="parent-password" placeholder="اختر كلمة مرور قوية" required minlength="4">
+                </div>
+                
+                <button type="submit" id="parent-next-btn" style="margin-top: 25px;">
+                    التالي (التحقق من العمر)
+                </button>
+            </form>
+            <button id="back-from-parent-form-btn" class="btn-secondary" style="margin-top: 15px;">
+                ↩️ الرجوع لاختيار الدور
+            </button>
+        </section>
+
+        <section id="parent-verification" class="login-screen hidden">
+            <h2>مرحباً! التحقق الأبوي</h2>
+            <p style="font-size: 18px;">
+                يرجى إدخال **سنة ميلادك** (الوالد/الولي) للتحقق من أنك شخص بالغ.
+            </p>
+            
+            <form id="verification-form">
+                <div class="field" style="max-width: 300px; margin: 20px auto;">
+                    <label for="birth-year">سنة الميلاد (مثال: 1985)</label>
+                    <input type="number" id="birth-year" name="birth-year" required min="1900" max="2015">
+                </div>
+                
+                <button type="submit" id="verify-btn">
+                    تأكيد
+                </button>
+            </form>
+            <button id="back-from-verification-btn" class="btn-secondary" style="margin-top: 15px;">
+                ↩️ العودة
+            </button>
+        </section>
+
+        <section id="features-video" class="login-screen hidden">
+            <h2>شاهد ما ينتظر طفلك! 🚀</h2>
+            <p>قبل إعداد الحساب، شاهد هذا الفيديو القصير لترى أهم المميزات التعليمية التي سيستفيد منها طفلك:</p>
+            
+            <video
+  controls
+  style="
+    width:100%;
+    max-width:560px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+  ">
+  <source src="arbicvideo.mp4" type="video/mp4">
+</video>
+            
+            <p style="font-weight: bold; margin-top: 30px;">هل أنت جاهز للبدء وإعداد حساب لطفلك؟</p>
+            
+            <div class="actions">
+                <button id="continue-btn" class="role-btn">أكمل الإعداد (التالي)</button>
+                <button id="back-from-video-btn" class="btn-secondary">↩️ الرجوع (لا أرغب الآن)</button>
+            </div>
+        </section>
+
+
+        <section id="student-details" class="login-screen hidden">
+            <h2>إعداد حساب الطالب</h2>
+            <p>من فضلك أدخل بيانات طفلك لتخصيص تجربته التعليمية:</p>
+            
+            <form id="student-details-form">
+                <div class="field">
+                    <label for="student-name">اسم الطالب/ة (سيظهر له)</label>
+                    <input type="text" id="student-name" name="student-name" placeholder="مثال: سارة" required>
+                </div>
+                <div class="field">
+                    <label for="student-age">العمر (بالسنوات)</label>
+                    <input type="number" id="student-age" name="student-age" placeholder="مثال: 8" required min="3" max="14">
+                </div>
+                <div class="field">
+                    <label for="student-grade">الصف الدراسي (اختياري)</label>
+                    <select id="student-grade" name="student-grade">
+                        <option value="">غير محدد</option>
+                        <option value="kg1">روضة 1</option>
+                        <option value="kg2">روضة 2</option>
+                        <option value="grade1">الصف الأول</option>
+                        <option value="grade2">الصف الثاني</option>
+                        <option value="grade3">الصف الثالث</option>
+                        <option value="grade4">الصف الرابع</option>
+                        <option value="grade5">الصف الخامس</option>
+                        <option value="grade6">الصف السادس</option>
+                        <option value="middle">المرحلة الإعدادية</option>
+                    </select>
+                </div>
+                
+                <button type="submit" id="finish-registration-btn" style="margin-top: 25px;">
+                    ابدأ اللعب الآن! 🎉
+                </button>
+            </form>
+            <button id="back-from-student-details-btn" class="btn-secondary" style="margin-top: 15px;">
+                ↩️ العودة للفيديو
+            </button>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة.</p>
+    </footer>
+    
+    <script src="logan.js"></script>
+    <script src="sounds.js"></script>
+
+</body>
+</html>
