@@ -215,20 +215,19 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleBtn.setAttribute('aria-label', 'Toggle Sidebar');
     document.body.appendChild(toggleBtn);
 
-    toggleBtn.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-            // منطق الموبايل
-            sidebar.classList.toggle('active');
-            // إزالة كلاس hidden إذا كان موجوداً لضمان الظهور
-            sidebar.classList.remove('hidden');
-        } else {
-            // منطق سطح المكتب
-            sidebar.classList.toggle('hidden');
-            if (pageWrapper) {
-                pageWrapper.classList.toggle('expanded');
-            }
+// ✓ الكود الصحيح
+toggleBtn.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+        // منطق الموبايل: إظهار/إخفاء القائمة الجانبية كاملة
+        sidebar.classList.toggle('active');
+    } else {
+        // منطق سطح المكتب: إظهار/إخفاء القائمة الجانبية كاملة
+        sidebar.classList.toggle('hidden');
+        if (pageWrapper) {
+            pageWrapper.classList.toggle('expanded');
         }
-    });
+    }
+});
 
     // إغلاق القائمة عند النقر خارجها في الموبايل
     document.addEventListener('click', (e) => {
